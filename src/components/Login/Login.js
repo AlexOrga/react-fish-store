@@ -5,7 +5,9 @@ import './Login.css';
 class Login extends React.Component {
   render () {
     return (
-      <h1 className="login">Login</h1>
+      <div className="login text-center">
+        <h1>Login</h1>
+      </div>
     );
   }
 }
