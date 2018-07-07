@@ -12,6 +12,8 @@ import Navbar from '../components/Navbar/Navbar';
 // import OrderSpa from '../components/OrderSpa/OrderSpa';
 import Register from '../components/Register/Register';
 // import SingleOrder from '../components/SingleOrder/SingleOrder';
+import fbConnection from '../FirebaseRequests/connection';
+fbConnection();
 
 const PrivateRoute = ({component: Component, authed, ...rest}) => {
   return (
