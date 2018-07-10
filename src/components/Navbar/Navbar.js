@@ -1,5 +1,5 @@
 import React from 'react';
-import authRequests from '../../FirebaseRequests/auth';
+import authRequests from '../../firebaseRequests/auth';
 
 import { Link } from 'react-router-dom';
 import './Navbar.css';

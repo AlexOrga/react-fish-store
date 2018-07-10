@@ -1,3 +1,22 @@
+@import 'styles/_colors';
+
 .SingleOrder {
-  background-color: silver;
+  border: 1rem double $black;
+  background: $white;
+  transition: all 0.3s;
+  box-shadow: 0 5px 5px $black;
+  overflow: scroll;
+  padding-top: 15px;
+  height: 90vh;
+
+  .fishes {
+    margin-top: 75px;
+    margin-bottom: 20px;
+    height: 50vh;
+    overflow: scroll;
+  }
+
+  .totals {
+    border-top: 1px solid $black;
+  }
 }

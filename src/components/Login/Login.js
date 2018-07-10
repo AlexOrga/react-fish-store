@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import authRequests from '../../FirebaseRequests/auth';
+import authRequests from '../../firebaseRequests/auth';
 
 import './Login.css';
 
 class Login extends React.Component {
   state = {
     user: {
-      email: 'zoeames@gmail.com',
-      password: '123456',
+      email: 'john.doe@johndoe.com',
+      password: 'johnny',
     },
   };
 
@@ -22,7 +22,7 @@ class Login extends React.Component {
         this.props.history.push('/orders');
       })
       .catch(error => {
-        console.error('there was an error in login', error);
+        console.error('there was an error in registering', error);
       });
   };
 
@@ -44,12 +44,12 @@ class Login extends React.Component {
       <div className="Login">
         <div id="login-form">
           <h1 className="text-center">Login</h1>
-          <form className="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+          <form className="form-horizontal col-sm-6 col-sm-offset-3">
             <div className="form-group">
-              <label htmlFor="inputEmail" className="col-sm-2 control-label">
-                Email
+              <label htmlFor="inputEmail" className="col-sm-4 control-label">
+                Email:
               </label>
-              <div className="col-sm-10">
+              <div className="col-sm-8">
                 <input
                   type="email"
                   className="form-control"
@@ -61,10 +61,10 @@ class Login extends React.Component {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="inputPassword" className="col-sm-2 control-label">
-                Password
+              <label htmlFor="inputPassword" className="col-sm-4 control-label">
+                Password:
               </label>
-              <div className="col-sm-10">
+              <div className="col-sm-8">
                 <input
                   type="password"
                   className="form-control"
@@ -76,12 +76,12 @@ class Login extends React.Component {
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-offset-2 col-sm-10 text-center">
+              <div className="col-sm-12 text-center">
                 <Link to="/register">Need to Register?</Link>
               </div>
             </div>
             <div className="form-group">
-              <div className="col-sm-offset-2 col-sm-10">
+              <div className="col-sm-12">
                 <button
                   type="submit"
                   className="btn btn-default col-xs-12"
