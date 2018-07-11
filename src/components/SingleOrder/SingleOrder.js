@@ -53,6 +53,18 @@ class SingleOrder extends React.Component {
       }));
   }
 
+  updateOrderClick = () => {
+    const firebaseId = this.props.match.params.id;
+    orderRequests
+      .putRequest(firebaseId, this.state.order)
+      .then(() => {
+        this.props.history.push('/orders');
+      })
+      .catch(((err) => {
+        console.error('error with put request', err);
+      }));
+  }
+
   render () {
     const {order} = this.state;
     const orderNumber = this.props.match.params.id;
@@ -109,7 +121,7 @@ class SingleOrder extends React.Component {
         </div>
         <div>
           <div className="col-xs-6">
-            <button className="col-xs-12 btn btn-default">
+            <button className="col-xs-12 btn btn-default" onClick={this.updateOrderClick}>
               Update Order
             </button>
           </div>
