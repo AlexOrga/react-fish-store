@@ -28,7 +28,6 @@ const PrivateRoute = ({component: Component, authed, ...rest}) => {
           />
         )
       }
-
     />
   );
 };
@@ -46,7 +45,6 @@ const PublicRoute = ({component: Component, authed, ...rest}) => {
           />
         )
       }
-
     />
   );
 };
