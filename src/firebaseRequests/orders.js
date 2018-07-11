@@ -47,4 +47,30 @@ const deleteRequest = (firebaseId) => {
   });
 };
 
-export default {getRequest, postRequest, deleteRequest};
+const getSingleRequest = (id) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/orders/${id}.json`)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+};
+
+const putRequest = (firebaseId, modifiedOrder) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .put(`${constants.firebaseConfig.databaseURL}/orders/${firebaseId}.json`, modifiedOrder)
+      .then((res) => {
+        resolve(res);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
+export default {getRequest, postRequest, deleteRequest, getSingleRequest, putRequest};
